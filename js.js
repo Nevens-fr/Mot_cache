@@ -123,11 +123,15 @@ function buildCopy(){
         }
         rep+="\n"
     }
-    return rep + "siteAddr"
+    return rep + "https://nevens-fr.github.io/Mot_cache/"
 }
 
 //When a character is entered, focus on next field
 function changeTArea(){
+    //remove previous element
+    if(document.getElementById(lignes[startL][startC]).value != ""){
+        document.getElementById(lignes[startL][startC]).value = ""
+    }
     if(startC + 1< MAXSIZE){
         document.getElementById(lignes[startL][startC + 1]).focus()
         startC = startC + 1
